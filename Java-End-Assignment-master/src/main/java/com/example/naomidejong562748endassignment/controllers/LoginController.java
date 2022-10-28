@@ -33,8 +33,8 @@ public class LoginController {
     @FXML
     protected void logInButtonClick() throws IOException {
         if(checkPassword()){
-            //MainController mainController = new MainController();
-            //mainController.setUser(currentUser);
+            MainController mainController = new MainController();
+            mainController.setUser(currentUser);
             App.setRoot("MainWindow");
             }
         else{errorLabel.setVisible(true);}

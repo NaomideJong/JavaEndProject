@@ -18,10 +18,12 @@ public class MainController{
     private Pane collectionTab;
     @FXML
     private Pane memberTab;
-    MainController() {
-        //welcomeLabel.setText(String.format("Welcome %s %s!", currentUser.getFirstName(), currentUser.getLastName()));
+
+    public void setUser(User user){
+        currentUser = user;
+        //Loopt hiet vast met NULL exception
+        welcomeLabel.setText(String.format("Welcome %s %s!", currentUser.getFirstName(), currentUser.getLastName()));
     }
-    public void setUser(User user){currentUser = user;}
 
     public void membersButtonClick(ActionEvent actionEvent) {
         memberTab.toFront();
