@@ -1,5 +1,6 @@
 package com.example.naomidejong562748endassignment;
 
+import com.example.naomidejong562748endassignment.controllers.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,12 +13,11 @@ public class App extends Application {
 
     private static Scene scene;
 
-
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("LoginScreen"), 700, 400);
+        scene = new Scene(loadFXML("LoginScreen"));
         stage.setScene(scene);
-        stage.setTitle("Library System");
+        stage.setTitle("Naomi's Library System");
         stage.show();
     }
 
