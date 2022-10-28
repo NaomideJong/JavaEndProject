@@ -37,10 +37,7 @@ public class LoginController {
 
         for (User user: users) {
             if(Objects.equals(user.getFirstName(), currentUser)){
-                if(Objects.equals(user.getPassword(), currentPass)){
-                    return true;
-                }
-                else {return false;}
+                return Objects.equals(user.getPassword(), currentPass);
             }
         }
         return false;
