@@ -17,29 +17,34 @@ public class LoginController {
     private Database database;
     private ObservableList<User> users;
 
-    public LoginController(){this.database = new Database();}
+    public LoginController(){
+        this.database = new Database();
+        users = FXCollections.observableArrayList(database.getUsers());
+    }
 
     @FXML
     protected void logInButtonClick() throws IOException {
-        users = FXCollections.observableArrayList(database.getUsers());
+        Label error = new Label("errorLabel");
+        if(checkPassword()){App.setRoot("MainWindow");}
+        else{ error.setVisible(true);}
+    }
+
+    protected boolean checkPassword(){
         TextField userField = new TextField("userField");
         TextField passField = new TextField("passField");
-        Label error = new Label("errorLabel");
         String currentUser = userField.getText();
         String currentPass = passField.getText();
 
         for (User user: users) {
             if(Objects.equals(user.getFirstName(), currentUser)){
                 if(Objects.equals(user.getPassword(), currentPass)){
-                    App.setRoot("MainWindow");
+                    return true;
                 }
                 else {
-                    error.setVisible(true);
+                    return false;
                 }
             }
         }
-        if (Objects.equals(error.getText(), "")) {
-            error.setVisible(true);
-        }
+        return false;
     }
 }
