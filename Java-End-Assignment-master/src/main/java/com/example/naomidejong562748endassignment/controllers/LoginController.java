@@ -40,9 +40,7 @@ public class LoginController {
                 if(Objects.equals(user.getPassword(), currentPass)){
                     return true;
                 }
-                else {
-                    return false;
-                }
+                else {return false;}
             }
         }
         return false;
