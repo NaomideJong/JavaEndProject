@@ -18,6 +18,7 @@ public class LoginController {
     private Database database;
     private ObservableList<User> users;
     private User currentUser;
+    private MainController mainController;
 
     public LoginController(){
         this.database = new Database();
@@ -33,9 +34,10 @@ public class LoginController {
     @FXML
     protected void logInButtonClick() throws IOException {
         if(checkPassword()){
-            MainController mainController = new MainController();
-            mainController.setUser(currentUser);
-            App.setRoot("MainWindow");
+            mainController = new MainController(database, currentUser);
+            App.setRoot("MainWindow", mainController);
+            //mainController.setData(currentUser, database);
+            //App.setRoot("MainWindow");
             }
         else{errorLabel.setVisible(true);}
     }
@@ -46,7 +48,7 @@ public class LoginController {
             String currentPass = passField.getText();
 
             for (User user: users)
-                if (Objects.equals(user.getFirstName(), currentUsername)) {
+                if (Objects.equals(user.getUsername(), currentUsername)) {
                         currentUser = user;
                         return Objects.equals(user.getPassword(), currentPass);
                 }
