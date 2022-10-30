@@ -36,14 +36,14 @@ public class Database {
         members.add(new Member(14, "Chuck","Shurley", LocalDate.parse("1907-09-21")));
 
         //books
-        books.add(new Book(210, true, "Tears of War", "G.F. Blackmore"));
-        books.add(new Book(211, true, "Tapped for Evil", "M.A. Pittampalli"));
-        books.add(new Book(212, true, "The Spell in the Winter", "G. F. Blackmore"));
-        books.add(new Book(213, true, "TommyInnit Says...The Quote Book", "T. Simons, W. Gold"));
-        books.add(new Book(214, true, "Maybe, Probably", "J.K. Williamson"));
-        books.add(new Book(215, true, "Supernatural", "C. Edlund"));
-        books.add(new Book(216, true, "Shroud the Spider", "T. Bee"));
-        books.add(new Book(217, true, "Redstone", "J. Cordeiro"));
-        books.add(new Book(218, true, "Why not to shoot zombies", "B. Singer"));
+        books.add(new Book(210, "Yes", "Tears of War", "G.F. Blackmore"));
+        books.add(new Book(211, "Yes", "Tapped for Evil", "M.A. Pittampalli"));
+        books.add(new Book(212, "Yes", "The Spell in the Winter", "G. F. Blackmore"));
+        books.add(new Book(213, "No", "TommyInnit Says...The Quote Book", "T. Simons, W. Gold"));
+        books.add(new Book(214, "Yes", "Maybe, Probably", "J.K. Williamson"));
+        books.add(new Book(215, "No", "Supernatural", "C. Edlund"));
+        books.add(new Book(216, "Yes", "Shroud the Spider", "T. Bee"));
+        books.add(new Book(217, "Yes", "Redstone", "J. Cordeiro"));
+        books.add(new Book(218, "No", "Why not to shoot zombies", "B. Singer"));
     }
 }

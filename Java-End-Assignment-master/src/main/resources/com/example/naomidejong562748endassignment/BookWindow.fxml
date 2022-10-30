@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <GridPane prefHeight="400.0" prefWidth="506.0" style="-fx-background-color: #f3f5ff;">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="195.60001220703126" minHeight="10.0" prefHeight="85.20001831054688" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="316.4" minHeight="10.0" prefHeight="234.4000122070312" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="316.4" minHeight="10.0" prefHeight="79.99998779296874" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <children>
+               <Label alignment="CENTER" text="Items" textFill="#272933" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                   <font>
+                       <Font name="Times New Roman" size="24.0" />
+                   </font>
+                   <GridPane.margin>
+                       <Insets bottom="20.0" left="20.0" top="10.0" />
+                   </GridPane.margin>
+               </Label>
+               <TableView fx:id="bookTable" GridPane.rowIndex="1">
+                   <columns>
+                       <TableColumn prefWidth="71.2000697851181" resizable="false" text="Itemcode">
+                       <cellValueFactory>
+                           <PropertyValueFactory property="itemcode" />
+                       </cellValueFactory>
+                       </TableColumn>
+                       <TableColumn prefWidth="87.20002746582031" resizable="false" text="Availability">
+                           <cellValueFactory>
+                               <PropertyValueFactory property="availability" />
+                           </cellValueFactory>
+                       </TableColumn>
+                       <TableColumn prefWidth="210.39996337890625" resizable="false" text="Title">
+                           <cellValueFactory>
+                               <PropertyValueFactory property="title" />
+                           </cellValueFactory>
+                       </TableColumn>
+                       <TableColumn prefWidth="118.40008544921875" resizable="false" text="Author">
+                           <cellValueFactory>
+                               <PropertyValueFactory property="author" />
+                           </cellValueFactory>
+                       </TableColumn>
+                   </columns>
+                   <GridPane.margin>
+                       <Insets left="10.0" right="10.0" />
+                   </GridPane.margin>
+               </TableView>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                   <children>
+                       <Button fx:id="addItemButton" mnemonicParsing="false" onAction="#addItemButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #272933;" text="Add Item" textFill="#f3f5ff">
+                           <font>
+                               <Font name="Times New Roman" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                               <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                       </Button>
+                       <Button fx:id="editItemButton" mnemonicParsing="false" onAction="#editItemButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #272933;" text="Edit Item" textFill="#f3f5ff">
+                           <font>
+                               <Font name="Times New Roman" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                               <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                       </Button>
+                       <Button fx:id="deleteItemButton" mnemonicParsing="false" onAction="#deleteItemButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #272933;" text="Delete Item" textFill="#f3f5ff">
+                           <font>
+                               <Font name="Times New Roman" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                               <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                       </Button>
+                   </children>
+               </HBox>
+           </children>
+       </GridPane>
+   </children>
+</HBox>

@@ -7,11 +7,15 @@ import com.example.naomidejong562748endassignment.App;
 import com.example.naomidejong562748endassignment.database.Database;
 import com.example.naomidejong562748endassignment.model.User;
 
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -36,11 +40,10 @@ public class LoginController {
         if(checkPassword()){
             mainController = new MainController(database, currentUser);
             App.setRoot("MainWindow", mainController);
-            //mainController.setData(currentUser, database);
-            //App.setRoot("MainWindow");
             }
         else{errorLabel.setVisible(true);}
     }
+
 
     protected boolean checkPassword(){
         if (userField != null && passField != null) {

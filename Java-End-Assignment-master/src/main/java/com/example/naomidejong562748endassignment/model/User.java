@@ -1,19 +1,17 @@
 package com.example.naomidejong562748endassignment.model;
 
-import java.time.LocalDate;
-
 public class User {
-    private int Indentifier;
-    private String Username;
-    private String Password;
+    private int identifier;
+    private String username;
+    private String password;
 
-    public User(int indentifier, String username, String password) {
-        Indentifier = indentifier;
-        Username = username;
-        Password = password;
+    public User(int identifier, String username, String password) {
+        this.identifier = identifier;
+        this.username = username;
+        this.password = password;
     }
 
-    public int getIndentifier(){return Indentifier;}
-    public String getUsername(){return Username;}
-    public String getPassword() {return Password;}
+    public int getIdentifier(){return identifier;}
+    public String getUsername(){return username;}
+    public String getPassword() {return password;}
 }

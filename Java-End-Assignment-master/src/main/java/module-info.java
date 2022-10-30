@@ -7,6 +7,8 @@ module com.example.naomidejong562748endassignment {
     requires org.kordamp.bootstrapfx.core;
 
     opens com.example.naomidejong562748endassignment to javafx.fxml;
+    opens com.example.naomidejong562748endassignment.model to javafx.base;
+
     exports com.example.naomidejong562748endassignment;
     exports com.example.naomidejong562748endassignment.controllers;
     opens com.example.naomidejong562748endassignment.controllers to javafx.fxml;
