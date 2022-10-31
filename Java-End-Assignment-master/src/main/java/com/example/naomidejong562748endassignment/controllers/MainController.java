@@ -46,7 +46,7 @@ public class MainController implements Initializable {
 
 
     public void membersButtonClick(ActionEvent actionEvent) {
-        loadScene("MemberWindow.fxml", new MemberController(database));
+        loadScene("MemberWindow.fxml", new MemberListController(database));
     }
 
     public void collectionButtonClick(ActionEvent actionEvent) {

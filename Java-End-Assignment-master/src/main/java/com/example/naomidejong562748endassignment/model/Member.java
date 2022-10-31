@@ -15,6 +15,13 @@ public class Member {
         this.birthday = birthday;
     }
 
+    //setters
+    public void setIdentifier(int identifier){this.identifier = identifier;}
+    public void setFirstName(String firstName){this.firstName = firstName;}
+    public void setLastName(String lastName){this.lastName = lastName;}
+    public void setBirthday(LocalDate birthday){this.birthday = birthday;}
+
+    //getters
     public int getIdentifier(){return identifier;}
 
     public String getFirstName(){return firstName;}

@@ -24,8 +24,8 @@ public class LoginController {
     private User currentUser;
     private MainController mainController;
 
-    public LoginController(){
-        this.database = new Database();
+    public LoginController(Database database){
+        this.database = database;
         users = FXCollections.observableArrayList(database.getUsers());
     }
 

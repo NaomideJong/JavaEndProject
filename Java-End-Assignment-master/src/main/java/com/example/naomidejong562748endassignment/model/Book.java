@@ -1,5 +1,8 @@
 package com.example.naomidejong562748endassignment.model;
 
+import java.time.LocalDate;
+import java.util.Optional;
+
 public class Book {
     private int itemcode;
     private String availability;
@@ -13,14 +16,13 @@ public class Book {
         this.author = author;
     }
 
+    //getters
     public int getItemcode() {return itemcode;}
-
     public String getAvailability() {return availability;}
-
     public String getTitle() {return title;}
-
     public String getAuthor() {return author;}
 
+    //setters
     public void setItemCode(int itemcode) {
         this.itemcode = itemcode;
     }

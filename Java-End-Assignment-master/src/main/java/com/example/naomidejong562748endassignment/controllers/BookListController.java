@@ -28,31 +28,33 @@ public class BookListController implements Initializable{
     public BookListController(Database database){this.database = database;}
 
     public void addItemButtonClick(ActionEvent actionEvent) {
-        bookCRUD("AddBookWindow.fxml", "Add Book");
+        bookCRUD("AddBookWindow.fxml", "Add Book", new BookAddController(database, selectedBook));
     }
     public void editItemButtonClick(ActionEvent actionEvent) {
-        bookCRUD("EditBookWindow.fxml", "Edit Book");
+        if(selectedBook != null) {
+            bookCRUD("EditBookWindow.fxml", "Edit Book", new BookEditController(database, selectedBook));
+        }
     }
     public void deleteItemButtonClick(ActionEvent actionEvent) {
-        bookCRUD("DeleteBookWindow.fxml", "Delete Book");
+        if(selectedBook != null) {
+            bookCRUD("DeleteBookWindow.fxml", "Delete Book", new BookDeleteController(database, selectedBook));
+        }
     }
 
-    private void bookCRUD(String window, String title){
+    private void bookCRUD(String window, String title, Object controller){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(window));
-            BookCRUDController bookCRUDController = new BookCRUDController(database, selectedBook);
-            fxmlLoader.setController(bookCRUDController);
+            fxmlLoader.setController(controller);
+            new BookCRUDController(database, selectedBook);
             Scene scene = new Scene(fxmlLoader.load());
-
             Stage dialog = new Stage();
             dialog.setScene(scene);
             dialog.setTitle(title);
             dialog.showAndWait();
 
-            if (bookCRUDController.getBooks() != null) {
-                books.add(bookCRUDController.getBooks());
-            }
-
+            books = FXCollections.observableArrayList(database.getBooks());
+            bookTable.getItems().clear();
+            bookTable.setItems(books);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
